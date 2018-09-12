@@ -1,0 +1,53 @@
+<app-modal title="Registro de Usuario">
+  <div class="row" [formGroup]="formNewUsers">
+    <div class="col-sm-12">
+      <label>Nombre</label>
+      <input type="text" class="form-control" [ngClass]="formService.isValid(formNewUsers.controls['nombre'])" formControlName="nombre" placeholder="Nombre">
+      <app-control-messages [control]="formNewUsers.controls['nombre']"></app-control-messages>
+    </div>
+    <div class="col-sm-12">
+      <label>Apellido Paterno</label>
+      <input type="text" class="form-control" [ngClass]="formService.isValid(formNewUsers.controls['apellidopat'])" formControlName="apellidopat" placeholder="Apellido Paterno">
+      <app-control-messages [control]="formNewUsers.controls['apellidopat']"></app-control-messages>
+    </div>
+    <div class="col-sm-12">
+      <label>Apellido Materno</label>
+      <input type="text" class="form-control" [ngClass]="formService.isValid(formNewUsers.controls['apellidomat'])" formControlName="apellidomat" placeholder="Apellido Paterno">
+      <app-control-messages [control]="formNewUsers.controls['apellidomat']"></app-control-messages>
+    </div>
+    <div class="col-sm-12">
+      <label>Email</label>
+      <input type="text" class="form-control" [ngClass]="formService.isValid(formNewUsers.controls['email'])" formControlName="email" placeholder="Email">
+      <app-control-messages [control]="formNewUsers.controls['email']"></app-control-messages>
+    </div>
+    <div class="col-sm-12">
+      <label>Fecha Contrato</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]="formService.isValid(formNewUsers.controls['fechac'])"
+             bsDatepicker placement="top"
+             formControlName="fechac"
+             placeholder="Fecha Contrato">
+      <app-control-messages [control]="formNewUsers.controls['fechac']"></app-control-messages>
+    </div>
+    <div class="col-sm-12">
+      <label>Fecha Ingreso</label>
+      <input type="text"
+             class="form-control"
+             [ngClass]="formService.isValid(formNewUsers.controls['fechingreso'])"
+             bsDatepicker
+             placement="top"
+             formControlName="fechingreso"
+             placeholder="Fecha Ingreso">
+      <app-control-messages [control]="formNewUsers.controls['fechingreso']"></app-control-messages>
+    </div>
+  </div>
+</app-modal>
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" (click)="onClickSave()">
+    Guardar
+  </button>
+  <button type="button" class="btn btn-default" (click)="onClickClose()">
+    Cerrar
+  </button>
+</div>

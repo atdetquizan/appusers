@@ -1,0 +1,49 @@
+<app-content [title]="Usuarios">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="title">Lista de noticias</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+      <div class="btn-group btn-group-toggle">
+        <button class="btn btn-outline-danger btn-sm" type="button" (click)="onClickNew()">
+          <i class="fa fa-plus" aria-hidden="true"></i> Crear
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Operaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>{{ item.id }}</td>
+            <td>{{ item.first_name }}</td>
+            <td>{{ item.last_name }}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm" (click)="onClickView(item)">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm ml-1" (click)="onClickEdit(item)">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-pagination *ngIf="pages && page && total"
+                  [pages]="pages"
+                  [page]="page"
+                  [total]="total"
+                  (changePage)="eventChangePage($event)">
+  </app-pagination>
+</app-content>

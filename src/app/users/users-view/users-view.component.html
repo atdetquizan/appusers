@@ -1,0 +1,22 @@
+<app-modal title="Consultar usuario" *ngIf="user">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <img class="profile" src="{{ user.data.avatar }}" width="100%">
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <tr>
+      <th>Nombre</th>
+      <td> {{ user.data.first_name }} </td>
+    </tr>
+    <tr>
+      <th>Apellido</th>
+      <td> {{ user.data.last_name }} </td>
+    </tr>
+  </table>
+</app-modal>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="onClickClose()">
+    Cerrar
+  </button>
+</div>

@@ -1,0 +1,45 @@
+<app-modal title="Resultado">
+  <div class="row">
+    <div class="col-sm-12" *ngIf="user">
+      <alert type="success">
+        <strong>Exito!</strong> Los datos se guardaron correctamente.
+      </alert>
+      <table class="table table-bordered">
+        <tr>
+          <th>Nombre</th>
+          <td> {{ user.nombre }} </td>
+        </tr>
+        <tr>
+          <th>Apellido Paterno</th>
+          <td> {{ user.apellidopat }} </td>
+        </tr>
+        <tr>
+          <th>Apellido Materno</th>
+          <td> {{ user.apellidomat }} </td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td> {{ user.email }} </td>
+        </tr>
+        <tr>
+          <th>Fecha contrato</th>
+          <td> {{ user.fechac }} </td>
+        </tr>
+        <tr>
+          <th>Fecha ingreso</th>
+          <td> {{ user.fechingreso }} </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-12" *ngIf="!user">
+      <alert type="danger">
+        <strong>Error!</strong> Los datos no se guardaron correctamente.
+      </alert>
+    </div>
+  </div>
+</app-modal>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="onClickClose()">
+    Cerrar
+  </button>
+</div>
